@@ -1,0 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+}
+.video-bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* overflow-x: hidden; */
+  overflow: hidden;
+}
+
+.hero-content {
+  position: absolute;
+  margin-left: 30%;
+}
+.main-title {
+  text-align: center;
+}
+.main-title-sub {
+  text-align: center;
+}
