@@ -2,25 +2,93 @@ html {
   scroll-behavior: smooth;
 }
 
-.hero-section {
-}
-.video-bg {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  /* overflow-x: hidden; */
-  overflow: hidden;
+body {
+  font-family: "Teko", sans-serif;
+  background-color: #040f16;
 }
 
-.hero-content {
+.hero-section {
+  background-image: url(../../assets/images/ball-basketball-basketball-court-1752757.jpg);
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
   position: absolute;
-  margin-left: 30%;
+  top: 0;
+  left: 0;
+  background-color: #01bbef25;
 }
+
 .main-title {
+  position: absolute;
+  color: #b80c09;
+  -webkit-text-stroke: 3px #040f16;
+  text-align: center;
+  font-size: 150px;
+  left: 5%;
+  top: 10%;
+  z-index: 5;
+}
+
+.main-title-sub {
+  position: absolute;
+  color: rgb(255, 248, 248);
+  -webkit-text-stroke: 2px #040f16;
+  text-align: center;
+  font-size: 60px;
+  left: 5%;
+  top: 30%;
+
+  z-index: 5;
+}
+
+.hero-icon {
+  position: absolute;
+  color: #b80c09;
+  font-size: 200px;
+  bottom: 10%;
+  left: 10%;
+}
+
+.hero-icon:hover {
+  color: #040f16;
+}
+
+.data-section {
+  background-color: #040f16;
+}
+
+.table-style {
+  background-color: #ffffff;
+  font-size: 30px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.form-style {
+  background-color: #ffffff;
+  font-size: 30px;
+  padding: 20px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.data-header {
+  background-color: #ffffff;
+  border: 2px solid black;
+  letter-spacing: 5px;
   text-align: center;
 }
-.main-title-sub {
+
+.search-btn {
+  font-size: 30px;
+  background-color: #b80c09;
   text-align: center;
+}
+.search-btn:hover {
+  background-color: #01bbef;
+  border: 1px solid #01bbef;
 }
