@@ -51,6 +51,7 @@ body {
   font-size: 200px;
   bottom: 10%;
   left: 10%;
+  z-index: 5;
 }
 
 .hero-icon:hover {
@@ -59,6 +60,7 @@ body {
 
 .data-section {
   background-color: #040f16;
+  height: 100vh;
 }
 
 .table-style {
@@ -86,9 +88,17 @@ body {
 .search-btn {
   font-size: 30px;
   background-color: #b80c09;
+  border: 1px solid #b80c09;
   text-align: center;
 }
 .search-btn:hover {
-  background-color: #01bbef;
-  border: 1px solid #01bbef;
+  background-color: #040f16;
+  border: 1px solid #040f16;
+}
+
+.search-btn:visited {
+  font-size: 30px;
+  background-color: #b80c09;
+  border: 1px solid #b80c09;
+  text-align: center;
 }
