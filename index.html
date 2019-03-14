@@ -1,41 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="./assets/javascript/app.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src=“https://www.gstatic.com/firebasejs/5.8.6/firebase.js“> </script> <link
+        href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/images/Basketball-Free-PNG-Image.png" type="image/png">
+    <title>Hoop Data</title>
   </head>
   <body>
-    <section id="#" class="video-bg">
-      <video
-        src="./assets/video/Race Track Wide Shot-Stock Video.mov    "
-        autoplay="true"
-        loop="true"
-        muted
-      ></video>
+  <section id="#" class="hero-section">
+    <a href="#data">
+        <h1 class="main-title">HOOP DATA</h1>
+        <h2 class="main-title-sub">::Your Home For Comprehensive Basketball Stats::</h2>
+    </a>
+    
+    <div class="overlay"></div>
+  </section>
 
-      <div class="hero-content">
-        <h1 class="main-title">Fails of Glory</h1>
-        <h2 class="main-title-sub">
-          The world's most hilarious sports media
-        </h2>
-      </div>
-    </div>
+  <section id="data" class="data-section">
+      <div class="container">
+
+
+
+
+
+          <h1 class="data-header">Search Team</h1>
+          <form class="form-style">
+            <div class="form-group">
+              <label for="teamNameInput">Team Name</label>
+              <input
+                type="input"
+                class="form-control"
+                id="team-name"
+                
+                placeholder="Team Name"
+              />
+             
+            </div>
+            <div class="form-group">
+              <label for="playerInput">Player Name</label>
+              <input
+                type="input"
+                class="form-control"
+                id="player-input"
+                
+                placeholder="Player Name"
+              />
+             
+            </div>
+            
+           
+            
+            <button id="submit" type="submit" class="btn btn-primary">Seacrh</button>
+          </form>
+
+
+          <table class="table table-style">
+              <!-- <h1 class="data-header">Current </h1> -->
+              <thead>
+                <tr>
+                  <th scope="col">Employee Name</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">Months Worked</th>
+                  <th scope="col">Monthly Rate ($)</th>
+                  <th scope="col">Total Billed($)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                  
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+      
+           
+          </div>
   </section>
-  <section id="media" class="media-section">
-    <div class="container">
-      <div class="media-content"></div>
-    </div>
-  </section>
-</body>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    </body>
 
 </html>
