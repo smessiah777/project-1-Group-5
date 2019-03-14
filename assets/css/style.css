@@ -33,23 +33,28 @@ body {
   z-index: 5;
 }
 
-.main-title:hover {
-  color: #fbfbff;
-}
-
 .main-title-sub {
   position: absolute;
   color: rgb(255, 248, 248);
-  background-color: rgba(0, 0, 0, 0.705);
+  -webkit-text-stroke: 2px #040f16;
   text-align: center;
-  font-size: 30px;
+  font-size: 60px;
   left: 5%;
-  bottom: 10%;
-  border-radius: 28px 28px 28px 28px;
-  -moz-border-radius: 28px 28px 28px 28px;
-  -webkit-border-radius: 28px 28px 28px 28px;
-  border: 0px solid #000000;
+  top: 30%;
+
   z-index: 5;
+}
+
+.hero-icon {
+  position: absolute;
+  color: #b80c09;
+  font-size: 200px;
+  bottom: 10%;
+  left: 10%;
+}
+
+.hero-icon:hover {
+  color: #040f16;
 }
 
 .data-section {
@@ -78,8 +83,12 @@ body {
   text-align: center;
 }
 
-#submit {
+.search-btn {
   font-size: 30px;
-
-  background-color: teal;
+  background-color: #b80c09;
+  text-align: center;
+}
+.search-btn:hover {
+  background-color: #01bbef;
+  border: 1px solid #01bbef;
 }
