@@ -18,10 +18,14 @@
   </head>
   <body>
   <section id="#" class="hero-section">
-    <a href="#data">
+    
         <h1 class="main-title">HOOP DATA</h1>
-        <h2 class="main-title-sub">::Your Home For Comprehensive Basketball Stats::</h2>
-    </a>
+        <h2 class="main-title-sub">Your Home For Comprehensive Basketball Stats</h2>
+        <a href="#data"><i class="fas fa-arrow-alt-circle-down hero-icon"></i></a>
+    
+
+    
+
     
     <div class="overlay"></div>
   </section>
@@ -35,17 +39,12 @@
 
           <h1 class="data-header">Search Team</h1>
           <form class="form-style">
-            <div class="form-group">
-              <label for="teamNameInput">Team Name</label>
-              <input
-                type="input"
-                class="form-control"
-                id="team-name"
-                
-                placeholder="Team Name"
-              />
-             
-            </div>
+              <div class="form-group">
+                  <label for="teamControlSelect1">Teams</label>
+                  <select class="form-control" id="TeamControlSelect">
+                    
+                  </select>
+                </div>
             <div class="form-group">
               <label for="playerInput">Player Name</label>
               <input
@@ -60,56 +59,30 @@
             
            
             
-            <button id="submit" type="submit" class="btn btn-primary">Seacrh</button>
+            <button id="submit" type="submit" class="btn btn-primary search-btn">Seacrh</button>
           </form>
 
 
           <table class="table table-style">
-              <!-- <h1 class="data-header">Current </h1> -->
+              <h1 class="data-header">Your Hoop Data </h1>
               <thead>
                 <tr>
-                  <th scope="col">Employee Name</th>
-                  <th scope="col">Role</th>
-                  <th scope="col">Start Date</th>
-                  <th scope="col">Months Worked</th>
-                  <th scope="col">Monthly Rate ($)</th>
-                  <th scope="col">Total Billed($)</th>
+                  <th scope="col">Team Name</th>
+                  <th scope="col">Wins</th>
+                  <th scope="col">Loses</th>
+                 
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
                   
+                  <td class="data-team-name">Mark</td>
+                  <td class="data-team-wins">Otto</td>
+                  <td class="data-team-loses">@mdo</td>
+                 
                 </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+             
+              
               </tbody>
             </table>
       
