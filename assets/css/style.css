@@ -53,6 +53,10 @@ body {
   left: 10%;
 }
 
+.hero-icon:hover {
+  color: #040f16;
+}
+
 .data-section {
   background-color: #040f16;
 }
@@ -80,8 +84,6 @@ body {
 }
 
 .search-btn {
-  display: flex;
-  justify-content: center;
   font-size: 30px;
   background-color: #b80c09;
   text-align: center;
