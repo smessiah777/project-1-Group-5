@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+ var database = firebase.database();
+
 var params = {
   // Request parameters
 };
@@ -45,9 +47,14 @@ $.ajax({
       event.preventDefault()
       // console.log("ive been clicked")
       clearTableRow();
-      for (var j = 0; j < data.length; j++) {
-        var userTeam = $("#TeamControlSelect").val()
-        // console.log("this is what the user chose: ", userTeam)
+      var userTeam = $("#TeamControlSelect").val()
+      // console.log("this is what the user chose: ", userTeam)
+      
+      database.ref().push({
+        userTeam
+        
+      });
+        for (var j = 0; j < data.length; j++) {
 
         if (userTeam === data[j].Name) {
           console.log("user Team:", userTeam);
