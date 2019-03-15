@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+ var database = firebase.database();
+
 var params = {
   // Request parameters
 };
@@ -17,7 +19,7 @@ $.ajax({
   url:
     "https://api.fantasydata.net/v3/nba/scores/json/TeamSeasonStats/2019" +
     $.param(params),
-  beforeSend: function(xhrObj) {
+  beforeSend: function (xhrObj) {
     // Request headers
     xhrObj.setRequestHeader(
       "Ocp-Apim-Subscription-Key",
@@ -28,7 +30,7 @@ $.ajax({
   // Request body
   data: "{body}"
 })
-  .done(function(data) {
+  .done(function (data) {
     console.log(data);
 
     for (var i = 0; i < data.length; i++) {
@@ -40,24 +42,39 @@ $.ajax({
 
       // console.log(data[0].Name);
       // console.log(data[0].Wins);
-
-      $("#submit").on("click", function(event) {
-        event.preventDefault();
-        console.log("ive been clicked");
-
-        var userTeam = $("#TeamControlSelect").val();
-        console.log("this is what the user chose: ", userTeam);
-
-        var tr = $("<tr>").append($("<td>").text(data[i].Name));
-
-        // $("#table > tbody").append(
-        //   "<tr><td>" + data[i].Name +
-        //   "</td><td>" + data[i].Wins +
-        //   "</td > <td>" + data[i].Losses + "</td></tr>"
-        // )
-      });
     }
-  })
-  .fail(function() {
-    alert("error");
+    $("#submit").on("click", function (event) {
+      event.preventDefault()
+      // console.log("ive been clicked")
+      clearTableRow();
+      var userTeam = $("#TeamControlSelect").val()
+      // console.log("this is what the user chose: ", userTeam)
+      
+      database.ref().push({
+        userTeam
+        
+      });
+        for (var j = 0; j < data.length; j++) {
+
+        if (userTeam === data[j].Name) {
+          console.log("user Team:", userTeam);
+          console.log("object: ", data[j].Name);
+          var tr = $("<tr>")
+          var tdName = $("<td>").html(data[j].Name);
+          var tdWins = $("<td>").html(data[j].Wins);
+          var tdLosses = $("<td>").html(data[j].Losses);
+          tr.append(tdName);
+          tr.append(tdWins);
+          tr.append(tdLosses);
+          $(".table").prepend(tr);
+          console.log("what is in the table?", data[j].Name)
+        }
+
+      }
+    })
+
+    //empty table row
+    function clearTableRow() {
+      $("tbody").empty();
+    }
   });
