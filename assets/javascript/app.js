@@ -33,31 +33,35 @@ $.ajax({
 
       // console.log(data[0].Name);
       // console.log(data[0].Wins);
-
-      $("#submit").on("click", function (event) {
-        event.preventDefault()
-        console.log("ive been clicked")
-
-        var userTeam = $("#TeamControlSelect").val()
-        console.log("this is what the user chose: ", userTeam)
-
-        var tr = $("<tr>").append($("<td>").text(data[i].Name));
-
-        // $("#table > tbody").append(
-        //   "<tr><td>" + data[i].Name +
-        //   "</td><td>" + data[i].Wins +
-        //   "</td > <td>" + data[i].Losses + "</td></tr>"
-        // )
-
-      })
-
-
     }
+    $("#submit").on("click", function (event) {
+      event.preventDefault()
+      // console.log("ive been clicked")
+      clearTableRow();
+      for (var j = 0; j < data.length; j++) {
+        var userTeam = $("#TeamControlSelect").val()
+        // console.log("this is what the user chose: ", userTeam)
 
+        if (userTeam === data[j].Name) {
+          console.log("user Team:", userTeam);
+          console.log("object: ", data[j].Name);
+          var tr = $("<tr>")
+          var tdName = $("<td>").html(data[j].Name);
+          var tdWins = $("<td>").html(data[j].Wins);
+          var tdLosses = $("<td>").html(data[j].Losses);
+          tr.append(tdName);
+          tr.append(tdWins);
+          tr.append(tdLosses);
+          $(".table").prepend(tr);
+          console.log("what is in the table?", data[j].Name)
+        }
 
+      }
+    })
 
-  })
-  .fail(function () {
-    alert("error");
+    //empty table row
+    function clearTableRow() {
+      $("tbody").empty();
+    }
   });
 
