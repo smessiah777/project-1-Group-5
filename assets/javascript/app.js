@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 
 
 var params = {
     // Request parameters
 };
+
 
 $.ajax({
     url: "https://api.fantasydata.net/v3/nba/scores/json/TeamSeasonStats/2019" + $.param(params),
@@ -45,15 +45,13 @@ $.ajax({
     .fail(function () {
         alert("error");
     });
-=======
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyBjkO2qYjqUWPq8GyF1pfN_tfR55laNTC8",
-  authDomain: "nba-project-one.firebaseapp.com",
-  databaseURL: "https://nba-project-one.firebaseio.com",
-  projectId: "nba-project-one",
-  storageBucket: "nba-project-one.appspot.com",
-  messagingSenderId: "344444587997"
+    apiKey: "AIzaSyBjkO2qYjqUWPq8GyF1pfN_tfR55laNTC8",
+    authDomain: "nba-project-one.firebaseapp.com",
+    databaseURL: "https://nba-project-one.firebaseio.com",
+    projectId: "nba-project-one",
+    storageBucket: "nba-project-one.appspot.com",
+    messagingSenderId: "344444587997"
 };
 firebase.initializeApp(config);
->>>>>>> master
