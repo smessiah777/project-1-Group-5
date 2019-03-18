@@ -63,19 +63,49 @@ $.ajax({
         tr.append(tdName);
         tr.append(tdWins);
         tr.append(tdLosses);
-        $(".table").prepend(tr);
+        $("#team-table").prepend(tr);
         console.log("what is in the table?", data[j].Name);
       }
+
+      database.ref().push({
+        userTeam
+      });
+      for (var j = 0; j < data.length; j++) {
+        if (userTeam === data[j].Name) {
+          console.log("user Team:", userTeam);
+          console.log("object: ", data[j].Name);
+          var tr = $("<tr>");
+          var tdName = $("<td>").html(data[j].Name);
+          var tdWins = $("<td>").html(data[j].Wins);
+          var tdLosses = $("<td>").html(data[j].Losses);
+          tr.append(tdName);
+          tr.append(tdWins);
+          tr.append(tdLosses);
+          $("#team-table").prepend(tr);
+          console.log("what is in the table?", data[j].Name);
+        }
+      }
+    }
+
+    //empty table row
+    function clearTableRow() {
+      $("tbody").empty();
     }
   });
-
-  //empty table row
-  function clearTableRow() {
-    $("tbody").empty();
-  }
-});
-
-database.ref().on("value", function(snapshot) {
-  console.log(snapshot.val());
-  console.log(snapshot.userTeam.val());
+  // var previousSearch = database
+  //   .ref()
+  //   .on("child_added", function(childsnapshot) {
+  //     for (var i = 0; i < childsnapshot.length; i++) {
+  //       $("<option/>")
+  //         .val(childsnapshot[i])
+  //         .html(childsnapshot[i])
+  //         .appendTo("#TeamControlSelect");
+  //       console.log("searched stuff", childsnapshot.val());
+  //       $("#previousSearchControlSelect").append(childsnapshot.val());
+  //     }
+  //     database.ref().on("value", function(snapshot) {
+  //       console.log(snapshot.val());
+  //       console.log(snapshot.userTeam.val());
+  //     });
+  //   });
 });
