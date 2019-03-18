@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src=“https://www.gstatic.com/firebasejs/5.8.6/firebase.js“> </script> <link
-    href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./assets/images/Basketball-Free-PNG-Image.png" type="image/png">
+    <link
+      href="https://fonts.googleapis.com/css?family=Teko"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/Basketball-Free-PNG-Image.png"
+      type="image/png"
+    />
     <title>Hoop Data</title>
   </head>
   <body>
-  <section id="#" class="hero-section">
-    
-        <h1 class="main-title animated-main-title bounce-title">HOOP DATA</h1>
-        <h2 class="main-title-sub">Your Home For Comprehensive Basketball Stats</h2>
-        <a href="#data"><i class="fas fa-arrow-alt-circle-down hero-icon"></i></a>
+    <section id="#" class="hero-section">
+      <h1 class="main-title animated bounceIn">HOOP DATA</h1>
+      <h2 class="main-title-sub">
+        Your Home For Comprehensive Basketball Stats
+      </h2>
+      <a href="#data"><i class="fas fa-arrow-alt-circle-down hero-icon"></i></a>
 
-    
-    <div class="overlay"></div>
-  </section>
+      <div class="overlay"></div>
+    </section>
 
-  <section id="data" class="data-section">
+    <section id="data" class="data-section">
       <div class="container">
-
-
-
-
-
-          <h1 class="data-header">Search Team</h1>
-          <form class="form-style">
-              <div class="form-group">
-                  <label for="teamControlSelect1">Teams</label>
-                  <select class="form-control" id="TeamControlSelect">
-                    <!-- <option>1</option>
+        <h1 class="data-header">Search Team</h1>
+        <form class="form-style">
+          <div class="form-group">
+            <label for="teamControlSelect1">Teams</label>
+            <select class="form-control" id="TeamControlSelect">
+              <!-- <option>1</option>
                     <option>1</option> -->
+<<<<<<< HEAD
                     
                   </select>
                 </div>
@@ -109,15 +127,67 @@
          
       
            
+=======
+            </select>
           </div>
-  </section>
+          <div class="form-group">
+            <label for="playerInput">Player Name</label>
+            <input
+              type="input"
+              class="form-control"
+              id="player-input"
+              placeholder="Player Name"
+            />
+>>>>>>> master
+          </div>
 
+          <div class="form-group">
+            <label for="previousSearchControlSelect1">Previous Search</label>
+            <select class="form-control" id="previousSearchControlSelect">
+            </select>
+          </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="./assets/javascript/app.js"></script>
+          <button id="submit" type="submit" class="btn btn-primary search-btn">
+            Search
+          </button>
+        </form>
 
+        <table id="team-table" class="table table-style">
+          <h1 class="data-header">Team Data</h1>
+          <thead>
+            <tr>
+              <th scope="col" class="col-name">Team Name</th>
+              <th scope="col" class="col-name">Wins</th>
+              <th scope="col" class="col-name">Loses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+        <table id="player-table" class="table table-style">
+          <h1 class="data-header">Player Data</h1>
+          <thead>
+            <tr>
+              <th scope="col" class="col-name">Player Name</th>
+              <th scope="col" class="col-name">Points(AVG)</th>
+              <th scope="col" class="col-name">Assists</th>
+              <th class="col-name" scope="col">Rebounds</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/javascript/app.js"></script>
   </body>
+<<<<<<< HEAD
 
 
 
@@ -127,3 +197,6 @@
 
 
 </html>
+=======
+</html>
+>>>>>>> master

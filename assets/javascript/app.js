@@ -80,9 +80,6 @@ $("#submit").on("click", function (event) {
   })
     .done(function (data) {
       // console.log(data);
-
-
-
       for (var j = 0; j < data.length; j++) {
 
         if (userTeam === data[j].Name) {
@@ -102,10 +99,6 @@ $("#submit").on("click", function (event) {
           console.log(tdName);
           console.log(tdWins);
           console.log(tdLosses);
-
-
-
-
           $("#team").append(tr);
           // $("#team-table").text("tr");
           // console.log(tr);
@@ -147,18 +140,12 @@ $("#submit").on("click", function (event) {
 
     }
 
-
-
   })
-
-
   database.ref().push({
     userTeam,
     playerName
 
   });
-
-
 })
 
 function clearTableRow() {
