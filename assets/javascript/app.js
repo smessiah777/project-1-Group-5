@@ -30,7 +30,7 @@ $.ajax({
   // Request body
   data: "{body}"
 }).done(function(data) {
-  console.log(data);
+  // console.log(data);
 
   for (var i = 0; i < data.length; i++) {
     // creating drop down menu
@@ -73,4 +73,9 @@ $.ajax({
   function clearTableRow() {
     $("tbody").empty();
   }
+});
+
+database.ref().on("value", function(snapshot) {
+  console.log(snapshot.val());
+  console.log(snapshot.userTeam.val());
 });
