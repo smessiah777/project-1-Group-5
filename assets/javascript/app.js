@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
- var database = firebase.database();
+var database = firebase.database();
 
 var params = {
   // Request parameters
@@ -49,12 +49,12 @@ $.ajax({
       clearTableRow();
       var userTeam = $("#TeamControlSelect").val()
       // console.log("this is what the user chose: ", userTeam)
-      
+
       database.ref().push({
         userTeam
-        
+
       });
-        for (var j = 0; j < data.length; j++) {
+      for (var j = 0; j < data.length; j++) {
 
         if (userTeam === data[j].Name) {
           console.log("user Team:", userTeam);
@@ -66,7 +66,7 @@ $.ajax({
           tr.append(tdName);
           tr.append(tdWins);
           tr.append(tdLosses);
-          $(".table").prepend(tr);
+          $("#team-table").prepend(tr);
           console.log("what is in the table?", data[j].Name)
         }
 
