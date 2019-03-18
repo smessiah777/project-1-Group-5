@@ -67,24 +67,24 @@ $.ajax({
         console.log("what is in the table?", data[j].Name);
       }
 
-      database.ref().push({
-        userTeam
-      });
-      for (var j = 0; j < data.length; j++) {
-        if (userTeam === data[j].Name) {
-          console.log("user Team:", userTeam);
-          console.log("object: ", data[j].Name);
-          var tr = $("<tr>");
-          var tdName = $("<td>").html(data[j].Name);
-          var tdWins = $("<td>").html(data[j].Wins);
-          var tdLosses = $("<td>").html(data[j].Losses);
-          tr.append(tdName);
-          tr.append(tdWins);
-          tr.append(tdLosses);
-          $("#team-table").prepend(tr);
-          console.log("what is in the table?", data[j].Name);
-        }
-      }
+      // database.ref().push({
+      //   userTeam
+      // });
+      // for (var j = 0; j < data.length; j++) {
+      //   if (userTeam === data[j].Name) {
+      //     console.log("user Team:", userTeam);
+      //     console.log("object: ", data[j].Name);
+      //     var tr = $("<tr>");
+      //     var tdName = $("<td>").html(data[j].Name);
+      //     var tdWins = $("<td>").html(data[j].Wins);
+      //     var tdLosses = $("<td>").html(data[j].Losses);
+      //     tr.append(tdName);
+      //     tr.append(tdWins);
+      //     tr.append(tdLosses);
+      //     $("#team-table").prepend(tr);
+      //     console.log("what is in the table?", data[j].Name);
+      //   }
+      // }
     }
 
     //empty table row
@@ -101,4 +101,16 @@ $.ajax({
   //     console.log(snapshot.val());
   //     console.log(snapshot.userTeam.val());
   //   });
+
+
+  // $("<option/>")
+  //           .val(data[i].Name)
+  //           .html(data[i].Name)
+  //           .appendTo("#previousSearchControlSelect");
+  //     console.log("searched stuff", childsnapshot.val());
+  //     $("#previousSearchControlSelect").append(childsnapshot.val());
+
+
+
+
 });
