@@ -19,7 +19,7 @@ $.ajax({
   url:
     "https://api.fantasydata.net/v3/nba/scores/json/TeamSeasonStats/2019" +
     $.param(params),
-  beforeSend: function (xhrObj) {
+  beforeSend: function(xhrObj) {
     // Request headers
     xhrObj.setRequestHeader(
       "Ocp-Apim-Subscription-Key",
@@ -29,37 +29,52 @@ $.ajax({
   type: "GET",
   // Request body
   data: "{body}"
-})
-  .done(function (data) {
-    console.log(data);
+}).done(function(data) {
+  // console.log(data);
 
-    for (var i = 0; i < data.length; i++) {
-      // creating drop down menu
-      $("<option/>")
-        .val(data[i].Name)
-        .html(data[i].Name)
-        .appendTo("#TeamControlSelect");
+  for (var i = 0; i < data.length; i++) {
+    // creating drop down menu
+    $("<option/>")
+      .val(data[i].Name)
+      .html(data[i].Name)
+      .appendTo("#TeamControlSelect");
 
-      // console.log(data[0].Name);
-      // console.log(data[0].Wins);
-    }
-    $("#submit").on("click", function (event) {
-      event.preventDefault()
-      // console.log("ive been clicked")
-      clearTableRow();
-      var userTeam = $("#TeamControlSelect").val()
-      // console.log("this is what the user chose: ", userTeam)
+    // console.log(data[0].Name);
+    // console.log(data[0].Wins);
+  }
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+    // console.log("ive been clicked")
+    clearTableRow();
+    var userTeam = $("#TeamControlSelect").val();
+    // console.log("this is what the user chose: ", userTeam)
+
+    database.ref().push({
+      userTeam
+    });
+    for (var j = 0; j < data.length; j++) {
+      if (userTeam === data[j].Name) {
+        console.log("user Team:", userTeam);
+        console.log("object: ", data[j].Name);
+        var tr = $("<tr>");
+        var tdName = $("<td>").html(data[j].Name);
+        var tdWins = $("<td>").html(data[j].Wins);
+        var tdLosses = $("<td>").html(data[j].Losses);
+        tr.append(tdName);
+        tr.append(tdWins);
+        tr.append(tdLosses);
+        $("#team-table").prepend(tr);
+        console.log("what is in the table?", data[j].Name);
+      }
 
       database.ref().push({
         userTeam
-
       });
       for (var j = 0; j < data.length; j++) {
-
         if (userTeam === data[j].Name) {
           console.log("user Team:", userTeam);
           console.log("object: ", data[j].Name);
-          var tr = $("<tr>")
+          var tr = $("<tr>");
           var tdName = $("<td>").html(data[j].Name);
           var tdWins = $("<td>").html(data[j].Wins);
           var tdLosses = $("<td>").html(data[j].Losses);
@@ -67,14 +82,23 @@ $.ajax({
           tr.append(tdWins);
           tr.append(tdLosses);
           $("#team-table").prepend(tr);
-          console.log("what is in the table?", data[j].Name)
+          console.log("what is in the table?", data[j].Name);
         }
-
       }
-    })
+    }
 
     //empty table row
     function clearTableRow() {
       $("tbody").empty();
     }
   });
+  var previousSearch = database
+    .ref()
+    .on("child_added", function(childsnapshot) {
+      console.log("searched stuff", childsnapshot.val());
+    });
+  //   database.ref().on("value", function(snapshot) {
+  //     console.log(snapshot.val());
+  //     console.log(snapshot.userTeam.val());
+  //   });
+});
