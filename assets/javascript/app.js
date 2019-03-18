@@ -74,9 +74,7 @@ $.ajax({
     })
 
     //empty table row
-    function clearTableRow() {
-      $("tbody").empty();
-    }
+
   });
 
 
@@ -99,8 +97,41 @@ $(function () {
 
     console.log(data)
 
+    $("#submit").on("click", function (event) {
+      event.preventDefault()
+      // console.log("ive been clicked")
+      clearTableRow();
+      var playerName = $("#player-input").val()
+      console.log("this is what the user chose: ", playerName)
 
+      database.ref().push({
+        playerName
+
+      });
+      for (var j = 0; j < data.length; j++) {
+
+        if (playerName === data[j].Name) {
+          console.log("user Team:", playerName);
+          console.log("object: ", data[j].Name);
+          var tr = $("<tr>")
+          var tdPlayer = $("<td>").html(data[j].Name);
+          var tdPoints = $("<td>").html(data[j].Points);
+          var tdAssists = $("<td>").html(data[j].Assists);
+          var tdRebounds = $("<td>").html(data[j].Rebounds);
+          tr.append(tdPlayer);
+          tr.append(tdPoints);
+          tr.append(tdAssists);
+          tr.append(tdRebounds);
+          $("#player-table").prepend(tr);
+          console.log("what is in the table?", data[j].Name)
+        }
+
+      }
+    })
 
   })
 
 });
+function clearTableRow() {
+  $("tbody").empty();
+}
