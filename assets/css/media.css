@@ -120,6 +120,10 @@
     border: 2px solid black;
   }
 
+  .col-name {
+    font-size: 40px;
+  }
+
   .form-style {
     font-family: "Teko", sans-serif;
     background-color: #ffffff;
