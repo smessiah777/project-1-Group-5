@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
- var database = firebase.database();
+var database = firebase.database();
 
 var params = {
   // Request parameters
@@ -31,7 +31,7 @@ $.ajax({
   data: "{body}"
 })
   .done(function (data) {
-    console.log(data);
+    // console.log(data);
 
     for (var i = 0; i < data.length; i++) {
       // creating drop down menu
@@ -49,12 +49,12 @@ $.ajax({
       clearTableRow();
       var userTeam = $("#TeamControlSelect").val()
       // console.log("this is what the user chose: ", userTeam)
-      
+
       database.ref().push({
         userTeam
-        
+
       });
-        for (var j = 0; j < data.length; j++) {
+      for (var j = 0; j < data.length; j++) {
 
         if (userTeam === data[j].Name) {
           console.log("user Team:", userTeam);
@@ -66,7 +66,7 @@ $.ajax({
           tr.append(tdName);
           tr.append(tdWins);
           tr.append(tdLosses);
-          $(".table").prepend(tr);
+          $("#team-table").prepend(tr);
           console.log("what is in the table?", data[j].Name)
         }
 
@@ -78,3 +78,29 @@ $.ajax({
       $("tbody").empty();
     }
   });
+
+
+$(function () {
+  var params = {
+    // Request parameters
+  };
+
+  $.ajax({
+    url: "https://api.fantasydata.net/v3/nba/stats/json/PlayerSeasonStats/2019?" + $.param(params),
+    beforeSend: function (xhrObj) {
+      // Request headers
+      xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "ea390d2b909e42919428428303b716b8");
+    },
+    type: "GET",
+    // Request body
+    data: "{body}",
+  }).done(function (data) {
+
+
+    console.log(data)
+
+
+
+  })
+
+});
