@@ -59,6 +59,28 @@ $("#submit").on("click", function(event) {
   console.log("this is what the user chose: ", userTeam);
   var playerName = $("#player-input").val();
   console.log("this is what the user chose: ", playerName);
+  var res = playerName.split(" ");
+  // console.log("split in 2: ", res)
+  // console.log("first name: ", res[0])
+  // console.log("last name: ", res[1])
+  var uppercaseFirstLetter = res[0].charAt(0).toUpperCase();
+  var stringWithoutFirstLetter = res[0].slice(1);
+  var uppercase2ndLetter = res[1].charAt(0).toUpperCase();
+  var string2 = res[1].slice(1);
+  console.log(
+    "the first letter: ",
+    uppercaseFirstLetter,
+    stringWithoutFirstLetter
+  );
+  console.log("the first letter: ", uppercase2ndLetter, string2);
+  var together =
+    uppercaseFirstLetter +
+    stringWithoutFirstLetter +
+    " " +
+    uppercase2ndLetter +
+    string2;
+  console.log("full name: ", together);
+  playerName = together;
 
   $.ajax({
     url:
@@ -118,11 +140,11 @@ $("#submit").on("click", function(event) {
     // Request body
     data: "{body}"
   }).done(function(data) {
-    console.log(data);
+    // console.log(data)
 
     for (var j = 0; j < data.length; j++) {
-      if (playerName === data[j].Name) {
-        console.log("user Team:", playerName);
+      if (together === data[j].Name) {
+        console.log("user Team:", together);
         console.log("object: ", data[j].Name);
         var tr2 = $("<tr>");
         var tdPlayer = $("<td>").html(data[j].Name);
@@ -135,6 +157,7 @@ $("#submit").on("click", function(event) {
         tr2.append(tdRebounds);
         $("#player-table").prepend(tr2);
         console.log("what is in the table?", data[j].Name);
+        playerName = " ";
       }
     }
   });
