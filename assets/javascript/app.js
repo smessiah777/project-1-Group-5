@@ -170,21 +170,25 @@ $("#submit").on("click", function(event) {
 function clearTableRow() {
   $("tbody").empty();
 }
-var updatedSearch = database.ref().on("child_added", function(childsnapshot) {
-  console.log("this is the updated database", childsnapshot.val().userTeam);
-  console.log("this is the updated database", childsnapshot.val().playerName);
-  $("<option/>")
-    .val(childsnapshot.val().userTeam)
-    .html(childsnapshot.val().userTeam)
-    .appendTo("#previousSearchControlSelect");
-  $("<option/>")
-    .val(childsnapshot.val().playerName)
-    .html(childsnapshot.val().playerName)
-    .appendTo("#previousSearchControlSelect");
+var updatedSearch = database
+  .ref()
+  .limitToLast(5)
+  .on("child_added", function(childsnapshot) {
+    // console.log("this is the updated database", childsnapshot.val().userTeam);
+    // console.log("this is the updated database", childsnapshot.val().playerName);
 
-  // var updatedPlayerName = childsnapshot.val().playerName;
-  // $(previousControlSearchSelect).append(updatedPlayerName);
-});
+    $("<option/>")
+      .val(childsnapshot.val().userTeam)
+      .html(childsnapshot.val().userTeam)
+      .prependTo("#previousSearchControlSelect");
+    $("<option/>")
+      .val(childsnapshot.val().playerName)
+      .html(childsnapshot.val().playerName)
+      .prependTo("#previousSearchControlSelect");
+
+    // var updatedPlayerName = childsnapshot.val().playerName;
+    // $(previousControlSearchSelect).append(updatedPlayerName);
+  });
 
 // });
 
