@@ -92,20 +92,21 @@ $.ajax({
       $("tbody").empty();
     }
   });
-  // var previousSearch = database
-  //   .ref()
-  //   .on("child_added", function(childsnapshot) {
-  //     for (var i = 0; i < childsnapshot.length; i++) {
-  //       $("<option/>")
-  //         .val(childsnapshot[i])
-  //         .html(childsnapshot[i])
-  //         .appendTo("#TeamControlSelect");
-  //       console.log("searched stuff", childsnapshot.val());
-  //       $("#previousSearchControlSelect").append(childsnapshot.val());
-  //     }
-  //     database.ref().on("value", function(snapshot) {
-  //       console.log(snapshot.val());
-  //       console.log(snapshot.userTeam.val());
-  //     });
-  //   });
+  var previousSearch = database
+    .ref()
+    .on("child_added", function(childsnapshot) {
+      console.log("snapshot", childsnapshot.i.node.children.root.val());
+      // for (var i = 0; i < childsnapshot.length; i++) {
+      //   $("<option/>")
+      //     .val(childsnapshot[i])
+      //     .html(childsnapshot[i])
+      //     .appendTo("#TeamControlSelect");
+      //   console.log("searched stuff", childsnapshot.val());
+      //   $("#previousSearchControlSelect").append(childsnapshot.val());
+      // }
+      // database.ref().on("value", function(snapshot) {
+      //   console.log(snapshot.val());
+      //   console.log(snapshot.userTeam.val());
+      // });
+    });
 });
