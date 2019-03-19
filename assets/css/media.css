@@ -1,0 +1,210 @@
+@media only screen and (min-width: 375px) {
+  .hero-section {
+    background-image: url(../../assets/images/ball-basketball-basketball-court-1752757.jpg);
+
+    height: 100vh;
+
+    margin-bottom: 50px;
+  }
+  .main-title {
+    position: absolute;
+    color: #b80c09;
+    -webkit-text-stroke: 1px #040f16;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 900;
+    left: 5%;
+    top: 10%;
+    z-index: 5;
+  }
+
+  .main-title-sub {
+    position: absolute;
+    color: rgb(255, 248, 248);
+    -webkit-text-stroke: 2px #040f16;
+    text-align: center;
+    font-size: 40px;
+    left: 3%;
+    top: 30%;
+
+    z-index: 5;
+  }
+
+  .hero-icon {
+    position: absolute;
+    color: #b80c09;
+    font-size: 200px;
+    text-align: center;
+    bottom: 10%;
+    left: 25%;
+    z-index: 5;
+  }
+
+  .col-name {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Teko", sans-serif;
+    background-color: #040f16;
+  }
+
+  .hero-section {
+    background-image: url(../../assets/images/ball-basketball-basketball-court-1752757.jpg);
+    height: 100vh;
+    margin-bottom: 50px;
+  }
+
+  .overlay {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #01bbef25;
+  }
+
+  .main-title {
+    position: absolute;
+    color: #b80c09;
+    -webkit-text-stroke: 1px #040f16;
+    text-align: center;
+    font-size: 150px;
+    font-weight: 900;
+    left: 5%;
+    top: 10%;
+    z-index: 5;
+  }
+
+  .main-title-sub {
+    position: absolute;
+    color: rgb(255, 248, 248);
+    -webkit-text-stroke: 2px #040f16;
+    text-align: center;
+    font-size: 60px;
+    left: 5%;
+    top: 30%;
+
+    z-index: 5;
+  }
+
+  .hero-icon {
+    position: absolute;
+    color: #b80c09;
+    font-size: 200px;
+    bottom: 10%;
+    left: 10%;
+    z-index: 5;
+  }
+
+  .hero-icon:hover {
+    color: #040f16;
+  }
+
+  .data-section {
+    background-color: #040f16;
+    height: 100vh;
+  }
+
+  .table-style {
+    font-family: "Teko", sans-serif;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding: 20px;
+    border: 2px solid black;
+  }
+
+  .col-name {
+    font-size: 40px;
+  }
+
+  .form-style {
+    font-family: "Teko", sans-serif;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding: 20px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+  }
+
+  .data-header {
+    background-color: #ffffff;
+    -webkit-text-stroke: 0.3px #b80c09;
+    border: 2px solid black;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  .search-btn {
+    font-size: 30px;
+    background-color: #b80c09;
+    border: 1px solid #040f16;
+    text-align: center;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .search-btn:hover {
+    background-color: #040f16;
+    border: 1px solid #040f16;
+  }
+
+  .search-btn:visited {
+    font-size: 30px;
+    background-color: #b80c09;
+    border: 1px solid #b80c09;
+    text-align: center;
+  }
+
+  /* main-title animation */
+  .animated-main-title {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  }
+
+  @-webkit-keyframes bounce-title {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      -webkit-transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-5px);
+    }
+  }
+
+  @keyframes bounce-title {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      transform: translateY(5);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .bounce-title {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+  }
+}
